@@ -1,5 +1,5 @@
 const cheerio = require('cheerio');
-const fastify = require('fastify')({});
+const fastify = require('fastify')({ logger: true })
 const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
 
 /*fetch('http://thailand-seals.jeep.in.th')
@@ -48,10 +48,11 @@ fastify.get('/', async (request, reply) => {
             data.push({
                 provinceName,
                 sealName,
-                sealUrl
+                "sealUrl" : "https://anywhere.pwisetthon.com/http://thailand-seals.jeep.in.th/"+sealUrl
             });
         });
     });
+    return data;
 })
 
 // Run the server!

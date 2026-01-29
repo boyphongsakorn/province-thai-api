@@ -48,7 +48,7 @@ fastify.get('/', async (request, reply) => {
             data.push({
                 provinceName,
                 sealName,
-                "sealUrl" : "https://anywhere.pwisetthon.com/http://thailand-seals.jeep.in.th/"+sealUrl
+                "sealUrl" : "https://cors-fany.vercel.app/thailand-seals.jeep.in.th/"+sealUrl
             });
         });
     });
